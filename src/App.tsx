@@ -38,7 +38,7 @@ function App() {
       // <div><Alert text='Hello World'/></div> // this is urgly
       <div>
         <Alert>
-          Hello World
+          Hello <span> world </span>
         </Alert>
       </div>
     );

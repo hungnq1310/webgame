@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 
 interface AlertProps {
     // text: string; // not good practice
-    children: string;
+    children: ReactNode;
 }
 
 const Alert = ( {children} : AlertProps) => {
