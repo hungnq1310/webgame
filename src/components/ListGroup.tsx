@@ -8,6 +8,9 @@ import { useState } from "react";
 interface ListGroupProps {
   items: string[];
   heading: string;
+  //pass a function
+  onSelectItem: (item: string) => void;
+  
 }
 
 function ListGroup( props: ListGroupProps ) {
@@ -96,7 +99,11 @@ function ListGroup( props: ListGroupProps ) {
           <li 
             key={item}
             className={ selectIndex === index ? "list-group-item active" : "list-group-item" }
-            onClick={ () => { setSelectedIndex(index); }  } 
+            // onClick={ () => { setSelectedIndex(index); }  } 
+            onClick={ () => { 
+              setSelectedIndex(index); 
+              props.onSelectItem(item);
+            }}
           >{item}</li>
         ))}
       </ul>

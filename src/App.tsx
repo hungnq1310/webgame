@@ -18,11 +18,14 @@ function App() {
     'E'
   ];
 
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  }
 
   return (
     <div>
-      <ListGroup items={items1} heading="Items"/>
-      <ListGroup items={items2} heading="Characters"/>
+      <ListGroup items={items1} heading="Items" onSelectItem={handleSelectItem} />
+      <ListGroup items={items2} heading="Characters" onSelectItem={handleSelectItem} />
     </div>
   );
   // or <Message /> - JSX 
