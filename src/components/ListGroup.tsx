@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { MouseEvent } from "react";
+import { useState } from "react";
 
 function ListGroup() {
 
@@ -55,8 +56,15 @@ function ListGroup() {
 
   // #2
   // complicate event handling
-  const handleClick = (event: MouseEvent) => {console.log(event)};
+  // const handleClick = (event: MouseEvent) => {console.log(event)};
 
+
+  // state management
+
+  // let selectIndex = 0; // this is local variable, not state variable
+  // hook: useState. State change -> re-render
+  const [selectIndex, setSelectedIndex] = useState(-1); // [state, updater function]
+  // NOTE: its component has its own state, not shared with other components
 
   return (
     // cannot create multiple elements in JSX
@@ -85,8 +93,8 @@ function ListGroup() {
         {items.map((item, index) => (
           <li 
             key={item}
-            className="list-group-item"
-            onClick={handleClick} 
+            className={ selectIndex === index ? "list-group-item active" : "list-group-item" }
+            onClick={ () => { setSelectedIndex(index); }  } 
           >{item}</li>
         ))}
       </ul>
