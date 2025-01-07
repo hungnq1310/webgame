@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { MouseEvent } from "react";
 
 function ListGroup() {
 
@@ -9,7 +10,7 @@ function ListGroup() {
     'A fourth item',
     'And a fifth one'
   ];
-  items = []; // test with empty array
+  // items = []; // test with empty array
 
   // not have loop in JSX
 
@@ -39,13 +40,23 @@ function ListGroup() {
   const message = items.length === 0 ? <p>There are no items</p> : null;
   // or use && operator
   // const message = items.length === 0 && <p>There are no items</p>;
-  
+
   // benefit: function can pass parameter 
   // const getMessage() {
   //   if (items.length === 0) {
   //     return <p>There are no items</p>;
   //   }
   //   return null;
+  // }
+
+  // event handling
+  // #1
+  // add onClick event to li element
+
+  // #2
+  // complicate event handling
+  const handleClick = (event: MouseEvent) => {console.log(event)};
+
 
   return (
     // cannot create multiple elements in JSX
@@ -71,8 +82,12 @@ function ListGroup() {
       <h1>List Group</h1>
       {message}
       <ul className="list-group">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
+        {items.map((item, index) => (
+          <li 
+            key={item}
+            className="list-group-item"
+            onClick={handleClick} 
+          >{item}</li>
         ))}
       </ul>
     </Fragment>
