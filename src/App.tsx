@@ -1,4 +1,5 @@
 import Alert from './components/Alert';
+import Button from './components/Button';
 import ListGroup from './components/ListGroup';
 
 // function App() {
@@ -32,17 +33,35 @@ import ListGroup from './components/ListGroup';
 //   // or <Message /> - JSX 
 // }
 
-function App() {
+// function App() {
   
-    return (
-      // <div><Alert text='Hello World'/></div> // this is urgly
-      <div>
-        <Alert>
-          Hello <span> world </span>
-        </Alert>
-      </div>
-    );
-    // or <Message /> - JSX 
+//     return (
+//       // <div><Alert text='Hello World'/></div> // this is urgly
+//       <div>
+//         <Alert>
+//           Hello <span> world </span>
+//         </Alert>
+//       </div>
+//     );
+//     // or <Message /> - JSX 
+//   }
+
+
+function App() {
+
+  const handleClick = (event: React.MouseEvent) => {
+    console.log(event);
   }
+  
+  return (
+    // <div><Alert text='Hello World'/></div> // this is urgly
+    <div>
+      <Button onHanldeClick={(event: React.MouseEvent) => handleClick(event)}>
+        Hello <span> world </span>
+      </Button>
+    </div>
+  );
+  // or <Message /> - JSX 
+}
   
 export default App;
