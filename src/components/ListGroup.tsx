@@ -2,15 +2,17 @@ import { Fragment } from "react";
 import { MouseEvent } from "react";
 import { useState } from "react";
 
-function ListGroup() {
+// shape of input data
+// { items: [], heading: string}
 
-  let items = [
-    'An item',
-    'A second item',
-    'A third item',
-    'A fourth item',
-    'And a fifth one'
-  ];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup( props: ListGroupProps ) {
+// function ListGroup({ items, heading }: ListGroupProps) {  // no need to use props
+
   // items = []; // test with empty array
 
   // not have loop in JSX
@@ -38,7 +40,7 @@ function ListGroup() {
   
   // #3
   // use const or function to store conditional rendering
-  const message = items.length === 0 ? <p>There are no items</p> : null;
+  const message = props.items.length === 0 ? <p>There are no items</p> : null;
   // or use && operator
   // const message = items.length === 0 && <p>There are no items</p>;
 
@@ -87,10 +89,10 @@ function ListGroup() {
     // use Fragment to wrap multiple elements
     // or use a div (add extra div element)
     <Fragment>
-      <h1>List Group</h1>
+      <h1>List Group {props.heading}</h1>
       {message}
       <ul className="list-group">
-        {items.map((item, index) => (
+        {props.items.map((item, index) => (
           <li 
             key={item}
             className={ selectIndex === index ? "list-group-item active" : "list-group-item" }
