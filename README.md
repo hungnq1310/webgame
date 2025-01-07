@@ -2,6 +2,9 @@
 
 This project is a web-based for games using Vite, React, and TypeScript. It includes various components such as a `list group`, `buttons`, and `alerts` to demonstrate different functionalities and state management in React.
 
+## References:
+[Youtube](https://www.youtube.com/watch?v=SqcY0GlETPk)
+
 ## Project Structure
 
 - **vite.config.ts**: Configuration file for Vite.
