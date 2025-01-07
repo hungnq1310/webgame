@@ -49,14 +49,26 @@ import ListGroup from './components/ListGroup';
 
 function App() {
 
-  const handleClick = (event: React.MouseEvent) => {
-    console.log(event);
+  // const handleClick = (event: React.MouseEvent) => {
+  //   console.log(event);
+  // }
+
+  // return (
+  //   // <div><Alert text='Hello World'/></div> // this is urgly
+  //   <div>
+  //     <Button onHanldeClick={(event: React.MouseEvent) => handleClick(event)}>
+  //       Hello <span> world </span>
+  //     </Button>
+  //   </div>
+  // );
+
+  const onAlertClick = () => {
+    console.log('Alert clicked');
   }
   
   return (
-    // <div><Alert text='Hello World'/></div> // this is urgly
     <div>
-      <Button onHanldeClick={(event: React.MouseEvent) => handleClick(event)}>
+      <Button onAlertClick={onAlertClick} color='primary'>
         Hello <span> world </span>
       </Button>
     </div>
